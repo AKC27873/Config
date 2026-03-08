@@ -3,25 +3,21 @@ return {
 	------------------------------------------------------------------
 	-- Colorscheme (LOAD FIRST)
 	{
-		"folke/tokyonight.nvim",
+		"Shatur/neovim-ayu",
 		lazy = false,
 		priority = 1000,
 		opts = {
-			style = "night", -- night | storm | moon | day
-			transparent = true,
-			terminal_colors = true,
-			styles = {
-				comments = { italic = true },
-				keywords = { italic = true },
-				functions = { italic = true },
-				variables = {},
+			mirage = false, -- false = dark | true = mirage variant
+			terminal = true,
+			overrides = {
+				Comment = { italic = true },
+				Keyword = { italic = true },
+				Function = { italic = true },
 			},
-			dim_inactive = true,
-			lualine_bold = true,
 		},
 		config = function(_, opts)
-			require("tokyonight").setup(opts)
-			vim.cmd.colorscheme("tokyonight")
+			require("ayu").setup(opts)
+			vim.cmd.colorscheme("ayu")
 		end,
 	},
 	-- UI / Appearance

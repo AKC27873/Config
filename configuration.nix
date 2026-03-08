@@ -183,7 +183,7 @@ in
    pkgs.nerd-fonts.fira-code
    pkgs.papirus-icon-theme
    pkgs.bibata-cursors
-   pkgs.tokyonight-gtk
+   pkgs.ayu-theme-gtk
   ];
 
 
