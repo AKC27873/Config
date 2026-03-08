@@ -35,28 +35,60 @@ return {
 			options = {
 				theme = "tokyonight",
 				globalstatus = true,
+				section_separators = "",
+				component_separators = "",
 			},
 
 			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { "branch" },
-				lualine_c = { "filename" },
 
-				lualine_x = { "encoding", "filetype" },
-				lualine_y = { "progress" },
-
-				lualine_z = {
+				-- Left side
+				lualine_a = {
 					{
 						function()
 							return ""
 						end,
 					}, -- Linux penguin
+					"mode",
+				},
+
+				-- Git branch
+				lualine_b = {
+					{ "branch", icon = "" },
+				},
+
+				-- Directory + file
+				lualine_c = {
+					{
+						"filename",
+						path = 1, -- shows folder/file
+						symbols = {
+							modified = " ●",
+							readonly = " ",
+						},
+					},
+				},
+
+				-- LSP
+				lualine_x = {
+					"encoding",
+					"filetype",
+				},
+
+				-- Diagnostics
+				lualine_y = {
+					{
+						"diagnostics",
+						symbols = { error = " ", warn = " ", info = " " },
+					},
+				},
+				-- Progress
+				lualine_z = {
+					"progress",
 					"location",
 				},
 			},
 		},
 	},
-
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPre",
