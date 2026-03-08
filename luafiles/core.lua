@@ -35,57 +35,30 @@ return {
 			options = {
 				theme = "tokyonight",
 				globalstatus = true,
-				section_separators = "",
-				component_separators = "",
 			},
 
 			sections = {
-
-				-- Left side
 				lualine_a = {
 					{
 						function()
 							return ""
 						end,
-					}, -- Linux penguin
+					}, -- penguin
 					"mode",
 				},
 
-				-- Git branch
-				lualine_b = {
-					{ "branch", icon = "" },
-				},
+				lualine_b = { "branch" },
 
-				-- Directory + file
 				lualine_c = {
 					{
 						"filename",
-						path = 1, -- shows folder/file
-						symbols = {
-							modified = " ●",
-							readonly = " ",
-						},
+						path = 1, -- 0 = filename only, 1 = relative path, 2 = absolute path
 					},
 				},
 
-				-- LSP
-				lualine_x = {
-					"encoding",
-					"filetype",
-				},
-
-				-- Diagnostics
-				lualine_y = {
-					{
-						"diagnostics",
-						symbols = { error = " ", warn = " ", info = " " },
-					},
-				},
-				-- Progress
-				lualine_z = {
-					"progress",
-					"location",
-				},
+				lualine_x = { "encoding", "filetype" },
+				lualine_y = { "progress" },
+				lualine_z = { "location" },
 			},
 		},
 	},
