@@ -5,52 +5,32 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		lazy = false,
+		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
-		opts = {
-			flavour = "mocha", -- latte, frappe, macchiato, mocha
-			background = {
-				dark = "mocha",
-			},
-			transparent_background = false,
-			term_colors = true,
+		config = function()
+			require("gruvbox").setup({
+				terminal_colors = true,
+				contrast = "hard", -- hard | soft | empty
+				transparent_mode = false,
 
-			dim_inactive = {
-				enabled = true,
-				shade = "dark",
-				percentage = 0.15,
-			},
-
-			styles = {
-				comments = { "italic" },
-				conditionals = { "italic" },
-				keywords = { "italic" },
-				variables = {},
-			},
-
-			integrations = {
-				treesitter = true,
-				native_lsp = {
-					enabled = true,
-					underlines = {
-						errors = { "underline" },
-						warnings = { "underline" },
-						hints = { "underline" },
-						information = { "underline" },
-					},
+				overrides = {
+					comments = { italic = true },
+					keywords = { italic = true },
+					functions = { italic = true },
+					variables = {},
 				},
-				telescope = true,
-				cmp = true,
-				gitsigns = true,
-				which_key = true,
-			},
-		},
 
-		config = function(_, opts)
-			require("catppuccin").setup(opts)
-			vim.cmd.colorscheme("catppuccin")
+				dim_inactive = false,
+				underline = true,
+				bold = true,
+				italic = {
+					strings = false,
+					emphasis = true,
+					comments = true,
+				},
+			})
+
+			vim.cmd.colorscheme("gruvbox")
 		end,
 	},
 	{

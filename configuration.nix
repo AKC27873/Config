@@ -183,8 +183,11 @@ in
    pkgs.nerd-fonts.fira-code
    pkgs.papirus-icon-theme
    pkgs.bibata-cursors
-   pkgs.catppuccin
-   pkgs.catppuccin-gtk
+   pkgs.gruvbox-plus-icons
+   pkgs.gruvbox-dark-icons-gtk
+   pkgs.gruvbox-material-gtk-theme
+   pkgs.gruvbox-dark-gtk
+   pkgs.gruvbox-gtk-theme
   ];
 
 
