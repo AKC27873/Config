@@ -2,34 +2,63 @@ return {
 
 	------------------------------------------------------------------
 	-- Colorscheme (LOAD FIRST)
+	-- UI / Appearance
+	------------------------------------------------------------------
 	{
-		"Shatur/neovim-ayu",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		lazy = false,
 		priority = 1000,
 		opts = {
-			mirage = false, -- false = dark | true = mirage variant
-			terminal = true,
-			overrides = {
-				Comment = { italic = true },
-				Keyword = { italic = true },
-				Function = { italic = true },
+			flavour = "mocha", -- latte, frappe, macchiato, mocha
+			background = {
+				dark = "mocha",
+			},
+			transparent_background = false,
+			term_colors = true,
+
+			dim_inactive = {
+				enabled = true,
+				shade = "dark",
+				percentage = 0.15,
+			},
+
+			styles = {
+				comments = { "italic" },
+				conditionals = { "italic" },
+				keywords = { "italic" },
+				variables = {},
+			},
+
+			integrations = {
+				treesitter = true,
+				native_lsp = {
+					enabled = true,
+					underlines = {
+						errors = { "underline" },
+						warnings = { "underline" },
+						hints = { "underline" },
+						information = { "underline" },
+					},
+				},
+				telescope = true,
+				cmp = true,
+				gitsigns = true,
+				which_key = true,
 			},
 		},
+
 		config = function(_, opts)
-			require("ayu").setup(opts)
-			vim.cmd.colorscheme("ayu")
+			require("catppuccin").setup(opts)
+			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
-	-- UI / Appearance
-	------------------------------------------------------------------
-
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 
 		opts = {
 			options = {
-				theme = "tokyonight",
 				globalstatus = true,
 			},
 

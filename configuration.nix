@@ -183,7 +183,8 @@ in
    pkgs.nerd-fonts.fira-code
    pkgs.papirus-icon-theme
    pkgs.bibata-cursors
-   pkgs.ayu-theme-gtk
+   pkgs.catppuccin
+   pkgs.catppuccin-gtk
   ];
 
 
