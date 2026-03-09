@@ -11,7 +11,7 @@ return {
 			require("gruvbox").setup({
 				terminal_colors = true,
 				contrast = "hard", -- hard | soft | empty
-				transparent_mode = false,
+				transparent_mode = true,
 
 				overrides = {
 					comments = { italic = true },
@@ -265,9 +265,23 @@ return {
 		end,
 	},
 	{
-		"yousefhadder/markdown-plus.nvim",
-		ft = "markdown",
-		opts = {},
+		"stevearc/oil.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			default_file_explorer = true,
+			view_options = {
+				show_hidden = true,
+			},
+		},
+		keys = {
+			{
+				"<leader>6",
+				function()
+					require("oil").open_float()
+				end,
+				desc = "Open Oil Float",
+			},
+		},
 	},
 	------------------------------------------------------------------
 	-- Debugging
