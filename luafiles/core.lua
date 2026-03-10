@@ -264,25 +264,6 @@ return {
 			vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { desc = "Toggle Terminal" })
 		end,
 	},
-	{
-		"stevearc/oil.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			default_file_explorer = true,
-			view_options = {
-				show_hidden = true,
-			},
-		},
-		keys = {
-			{
-				"<leader>6",
-				function()
-					require("oil").open_float()
-				end,
-				desc = "Open Oil Float",
-			},
-		},
-	},
 	------------------------------------------------------------------
 	-- Debugging
 	------------------------------------------------------------------
