@@ -204,22 +204,34 @@ return {
 
 	{
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
 		dependencies = {
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"saadparwaiz1/cmp_luasnip",
-			"L3MON4D3/LuaSnip",
+			{
+				"garymjr/nvim-snippets",
+				opts = {
+					friendly_snippets = true,
+				},
+				dependencies = { "rafamadriz/friendly-snippets" },
+			},
 		},
-		opts = {},
+		opts = function(_, opts)
+			opts.snippet = {
+				expand = function(item)
+					return LazyVim.cmp.expand(item.body)
+				end,
+			}
+			if LazyVim.has("nvim-snippets") then
+				table.insert(opts.sources, { name = "snippets" })
+			end
+		end,
 	},
 
 	{
 		"L3MON4D3/LuaSnip",
-		event = "InsertEnter",
-		opts = {},
+		-- follow latest release.
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp",
 	},
-
 	------------------------------------------------------------------
 	-- Treesitter
 	------------------------------------------------------------------
