@@ -131,10 +131,9 @@ in
    pkgsUnstable.busybox
    pkgsUnstable.inetutils
    pkgs.openvpn
-   #pkgsUnstable.neovim
    pkgsUnstable.obsidian
    pkgsUnstable.librewolf
-   pkgs.gcc
+   pkgsUnstable.gcc
    pkgs.gnumake
    pkgs.ripgrep
    pkgs.fd
@@ -143,7 +142,6 @@ in
    pkgs.glibc.dev
    pkgs.eza
    pkgs.flameshot
-   pkgsUnstable.toybox
    pkgs.xclip
    pkgs.brightnessctl
    pkgs.libreoffice
@@ -157,7 +155,9 @@ in
    pkgs.docker
    pkgs.docker-compose
    pkgs.spotify
-   pkgs.virt-manager
+   pkgsUnstable.bundler
+   pkgsUnstable.ruby
+   pkgs.vimPlugins.nvim-treesitter-parsers.ruby
    pkgs.virtio-win
    pkgs.qemu
    pkgs.OVMF
@@ -173,15 +173,12 @@ in
    pkgs.xfce.xfce4-weather-plugin
    pkgs.xfce.xfce4-systemload-plugin
    pkgs.xfce.xfce4-clipman-plugin
-   pkgs.xfce.thunar-archive-plugin
-   pkgs.xfce.thunar-volman
 
    # Themes and fonts
    pkgs.adwaita-icon-theme
    pkgs.papirus-icon-theme
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
-   pkgs.papirus-icon-theme
    pkgs.bibata-cursors
    pkgs.gruvbox-plus-icons
    pkgs.gruvbox-dark-icons-gtk
