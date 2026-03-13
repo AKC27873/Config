@@ -5,32 +5,19 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		"ellisonleao/gruvbox.nvim",
+		"navarasu/onedark.nvim",
+		lazy = false,
 		priority = 1000,
 		config = function()
-			require("gruvbox").setup({
-				terminal_colors = true,
-				contrast = "hard", -- hard | soft | empty
-				transparent_mode = true,
-
-				overrides = {
-					comments = { italic = true },
-					keywords = { italic = true },
-					functions = { italic = true },
-					variables = {},
-				},
-
-				dim_inactive = false,
-				underline = true,
-				bold = true,
-				italic = {
-					strings = false,
-					emphasis = true,
-					comments = true,
+			require("onedark").setup({
+				style = "dark",
+				code_style = {
+					comments = "italic",
+					keywords = "italic",
+					functions = "italic",
 				},
 			})
-
-			vim.cmd.colorscheme("gruvbox")
+			require("onedark").load()
 		end,
 	},
 	{
@@ -275,6 +262,15 @@ return {
 			-- <leader>tt to toggle terminal
 			vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { desc = "Toggle Terminal" })
 		end,
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {},
 	},
 	------------------------------------------------------------------
 	-- Debugging

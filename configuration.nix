@@ -180,11 +180,8 @@ in
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.gruvbox-plus-icons
-   pkgs.gruvbox-dark-icons-gtk
-   pkgs.gruvbox-material-gtk-theme
-   pkgs.gruvbox-dark-gtk
-   pkgs.gruvbox-gtk-theme
+   pkgs.whitesur-gtk-theme
+   pkgs.whitesur-icon-theme
   ];
 
 
