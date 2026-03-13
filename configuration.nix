@@ -129,6 +129,7 @@ in
    pkgs.tree-sitter
    pkgsUnstable.tmux
    pkgsUnstable.busybox
+   pkgsUnstable.toybox
    pkgsUnstable.inetutils
    pkgs.openvpn
    pkgsUnstable.obsidian
@@ -155,7 +156,6 @@ in
    pkgs.docker
    pkgs.docker-compose
    pkgs.spotify
-   pkgsUnstable.bundler
    pkgs.virtio-win
    pkgs.qemu
    pkgs.OVMF
