@@ -156,8 +156,6 @@ in
    pkgs.docker-compose
    pkgs.spotify
    pkgsUnstable.bundler
-   pkgsUnstable.ruby
-   pkgs.vimPlugins.nvim-treesitter-parsers.ruby
    pkgs.virtio-win
    pkgs.qemu
    pkgs.OVMF
