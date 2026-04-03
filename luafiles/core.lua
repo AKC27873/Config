@@ -5,19 +5,21 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		"navarasu/onedark.nvim",
+		"olimorris/onedarkpro.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("onedark").setup({
-				style = "dark",
-				code_style = {
+			require("onedarkpro").setup({
+				theme = "onedark_dark", -- onedark, onelight, onedark_vivid, onedark_dark, vaporwave
+
+				styles = {
 					comments = "italic",
 					keywords = "italic",
 					functions = "italic",
 				},
 			})
-			require("onedark").load()
+
+			vim.cmd("colorscheme onedark_dark")
 		end,
 	},
 	{
