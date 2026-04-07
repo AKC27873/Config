@@ -199,49 +199,14 @@ in
   virtualisation.docker.enable = true;
   programs.zsh.enable = true;
 
-  # Proper virtualization setup
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      swtpm.enable = true;
-      ovmf.enable = true;
+virtualisation.libvirtd = {
+  enable = true;
+  qemu = {
+    package = pkgs.qemu_kvm;
+    runAsRoot = true;
+    swtpm.enable = true;
     };
   };
-  programs.virt-manager.enable = true;
-
-  environment.sessionVariables = {
-    LIBVIRT_DEFAULT_URI = "qemu:///system";
-  };
- networking = {
-
-  # Keep DHCP enabled globally (for Wi-Fi)
-  dhcpcd.enable = true;
-
-  # Wired lab interface - static IP
-  interfaces.enp2s0.useDHCP = false;
-  interfaces.enp2s0.ipv4.addresses = [{
-    address = "192.168.1.27"; # main wired IP in lab subnet
-    prefixLength = 24;
-  }];
-
-  # VLANs
-  vlans = {
-    vlan100 = { id = 100; interface = "enp2s0"; };
-    vlan101 = { id = 101; interface = "enp2s0"; };
-  };
-
-  # VLAN IPs in desired 192.168.* ranges
-  interfaces.vlan100.ipv4.addresses = [{
-    address = "192.168.100.27";
-    prefixLength = 24;
-  }];
-
-  interfaces.vlan101.ipv4.addresses = [{
-    address = "192.168.101.27";
-    prefixLength = 24;
-  }];
 
   # Optional: leave default gateway unset if you don't know lab switch IP
   # defaultGateway = "192.168.1.1";
