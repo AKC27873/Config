@@ -131,13 +131,11 @@ in
    pkgsUnstable.toybox
    pkgsUnstable.inetutils
    pkgs.openvpn
-   pkgsUnstable.ruby
-   pkgsUnstable.bundler
-   pkgs.vimPlugins.nvim-treesitter-parsers.ruby
    pkgsUnstable.obsidian
    pkgsUnstable.librewolf
    pkgs.powershell
    pkgs.gcc
+   pkgs.clang
    pkgs.gnumake
    pkgs.ripgrep
    pkgs.fd
@@ -181,13 +179,6 @@ in
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.dracula-theme
-   pkgs.dracula-icon-theme
-   pkgs.gruvbox-dark-gtk
-   pkgs.gruvbox-gtk-theme
-   pkgs.gruvbox-material-gtk-theme
-   pkgs.gruvbox-dark-icons-gtk
-   pkgs.gruvbox-plus-icons
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -206,14 +197,12 @@ in
   virtualisation.docker.enable = true;
   programs.zsh.enable = true;
 
-  # Proper virtualization setup
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      swtpm.enable = true;
-      ovmf.enable = true;
+virtualisation.libvirtd = {
+  enable = true;
+  qemu = {
+    package = pkgs.qemu_kvm;
+    runAsRoot = true;
+    swtpm.enable = true;
     };
   };
   programs.virt-manager.enable = true;
@@ -224,35 +213,6 @@ in
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  networking = {
-    dhcpcd.enable = true;
-
-    # Wired (USB Ethernet to switch)
-    interfaces.enp0s13f0u3u4.useDHCP = false;
-    interfaces.enp0s13f0u3u4.ipv4.addresses = [{
-      address = "192.168.1.28";
-      prefixLength = 24;
-    }];
-
-    # VLANs
-    vlans = {
-      vlan100 = { id = 100; interface = "enp0s13f0u3u4"; };
-      vlan101 = { id = 101; interface = "enp0s13f0u3u4"; };
-    };
-
-    interfaces.vlan100.ipv4.addresses = [{
-      address = "192.168.100.28";
-      prefixLength = 24;
-    }];
-
-    interfaces.vlan101.ipv4.addresses = [{
-      address = "192.168.101.28";
-      prefixLength = 24;
-    }];
-
-    # No default gateway here (important)
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
-  };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -268,4 +228,3 @@ in
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-
