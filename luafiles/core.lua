@@ -5,23 +5,19 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		"sainnhe/edge",
+		"sainnhe/everforest",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			-- Required options (Edge uses globals)
-			vim.g.edge_style = "default" -- default | aura | neon
-			vim.g.edge_enable_italic = 1
-			vim.g.edge_disable_italic_comment = 0
-			vim.g.edge_show_eob = 1
-			vim.g.edge_transparent_background = 0
+			-- Everforest options
+			vim.g.everforest_background = "hard" -- hard | medium | soft
+			vim.g.everforest_enable_italic = 1
+			vim.g.everforest_better_performance = 1
 
-			-- Better UI consistency
 			vim.o.termguicolors = true
 			vim.o.background = "dark"
 
-			-- Apply theme
-			vim.cmd.colorscheme("edge")
+			vim.cmd.colorscheme("everforest")
 		end,
 	},
 	{
