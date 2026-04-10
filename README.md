@@ -10,7 +10,6 @@ sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs-unstabl
 sudo nix-channel --update
 ```
 
-To follow the 
 * to update and follow the unstable package. 
 -------------------------------------------------------------------------------------
 
