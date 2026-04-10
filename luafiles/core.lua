@@ -5,21 +5,23 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		"olimorris/onedarkpro.nvim",
+		"sainnhe/edge",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("onedarkpro").setup({
-				theme = "onedark_dark", -- onedark, onelight, onedark_vivid, onedark_dark, vaporwave
+			-- Required options (Edge uses globals)
+			vim.g.edge_style = "default" -- default | aura | neon
+			vim.g.edge_enable_italic = 1
+			vim.g.edge_disable_italic_comment = 0
+			vim.g.edge_show_eob = 1
+			vim.g.edge_transparent_background = 0
 
-				styles = {
-					comments = "italic",
-					keywords = "italic",
-					functions = "italic",
-				},
-			})
+			-- Better UI consistency
+			vim.o.termguicolors = true
+			vim.o.background = "dark"
 
-			vim.cmd("colorscheme onedark_dark")
+			-- Apply theme
+			vim.cmd.colorscheme("edge")
 		end,
 	},
 	{
@@ -27,33 +29,10 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 
 		opts = {
-			options = {
-				globalstatus = true,
-			},
-
-			sections = {
-				lualine_a = {
-					{
-						function()
-							return ""
-						end,
-					}, -- penguin
-					"mode",
-				},
-
-				lualine_b = { "branch" },
-
-				lualine_c = {
-					{
-						"filename",
-						path = 1, -- 0 = filename only, 1 = relative path, 2 = absolute path
-					},
-				},
-
-				lualine_x = { "encoding", "filetype" },
-				lualine_y = { "progress" },
-				lualine_z = { "location" },
-			},
+			theme = "auto", -- IMPORTANT: edge supports auto detection
+			globalstatus = true,
+			section_separators = "",
+			component_separators = "",
 		},
 	},
 	{
