@@ -177,8 +177,19 @@ return {
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
 		opts = {
-			inlay_hints = {
-				enabled = false,
+			inlay_hints = { enabled = false },
+			diagnostics = {
+				virtual_text = false,
+			},
+		},
+	},
+	{
+		"folke/noice.nvim",
+		opts = {
+			lsp = {
+				signature = {
+					auto_open = { enabled = false },
+				},
 			},
 		},
 	},
@@ -188,13 +199,13 @@ return {
 		dependencies = {
 			{
 				"garymjr/nvim-snippets",
-				opts = {
-					friendly_snippets = true,
-				},
+				opts = { friendly_snippets = true },
 				dependencies = { "rafamadriz/friendly-snippets" },
 			},
 		},
 		opts = function(_, opts)
+			local cmp = require("cmp")
+
 			opts.snippet = {
 				expand = function(item)
 					return LazyVim.cmp.expand(item.body)
@@ -203,6 +214,10 @@ return {
 			if LazyVim.has("nvim-snippets") then
 				table.insert(opts.sources, { name = "snippets" })
 			end
+
+			-- disable the documentation popup window
+			opts.window = opts.window or {}
+			opts.window.documentation = cmp.config.disable
 		end,
 	},
 
