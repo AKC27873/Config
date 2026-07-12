@@ -184,11 +184,11 @@ in
    pkgs.xfce.xfce4-clipman-plugin
 
    # Themes and fonts
-   pkgs.whitesur-gtk-theme
-   pkgs.whitesur-icon-theme
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
+   pkgs.everforest-gtk-theme
+   pkgs.everforest-cursors
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
