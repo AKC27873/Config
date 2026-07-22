@@ -141,6 +141,7 @@ in
    pkgsUnstable.obsidian
    pkgsUnstable.librewolf
    pkgs.powershell
+   pkgsUnstable.jq
    pkgs.gcc
    pkgs.clang
    pkgs.gnumake

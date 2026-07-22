@@ -141,6 +141,7 @@ in
    pkgsUnstable.obsidian
    pkgsUnstable.librewolf
    pkgsUnstable.gcc
+   pkgsUnstable.jq
    pkgs.gnumake
    pkgs.ripgrep
    pkgs.fd
