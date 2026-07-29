@@ -188,7 +188,11 @@ in
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.tokyonight-gtk-theme
+   pkgs.catppuccin
+   pkgs.catppuccin-gtk
+   pkgs.catppuccin-cursors
+   pkgs.catppuccin-discord
+
   ];
 
 

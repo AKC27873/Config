@@ -6,44 +6,51 @@ return {
 	------------------------------------------------------------------
 	{
 		{
-			"folke/tokyonight.nvim",
+			"catppuccin/nvim",
+			name = "catppuccin",
+			priority = 1000,
 			opts = {
-				-- Available: "storm", "moon", "night", "day"
-				style = "night",
-
-				transparent = true,
-				terminal_colors = true,
-				dim_inactive = true,
-				lualine_bold = true,
+				flavour = "mocha",
+				transparent_background = true,
 
 				styles = {
-					comments = { italic = true },
-					keywords = { italic = true },
-					functions = { italic = true },
-					variables = {},
-
-					sidebars = "transparent",
-					floats = "transparent",
+					comments = { "italic" },
+					conditionals = { "italic" },
+					keywords = { "italic" },
+					functions = { "italic" },
 				},
 
-				on_highlights = function(hl, colors)
-					-- Keep the current line visible with transparency enabled
-					hl.CursorLine = {
-						bg = colors.bg_highlight,
-					}
-
-					-- Clearer visual-mode selection
-					hl.Visual = {
-						bg = colors.bg_visual,
-					}
-				end,
+				integrations = {
+					blink_cmp = true,
+					gitsigns = true,
+					indent_blankline = {
+						enabled = true,
+						scope_color = "lavender",
+						colored_indent_levels = false,
+					},
+					mason = true,
+					native_lsp = {
+						enabled = true,
+						underlines = {
+							errors = { "undercurl" },
+							hints = { "undercurl" },
+							warnings = { "undercurl" },
+							information = { "undercurl" },
+						},
+					},
+					noice = true,
+					notify = true,
+					snacks = true,
+					treesitter = true,
+					which_key = true,
+				},
 			},
 		},
 
 		{
 			"LazyVim/LazyVim",
 			opts = {
-				colorscheme = "tokyonight",
+				colorscheme = "catppuccin-mocha",
 			},
 		},
 	},
