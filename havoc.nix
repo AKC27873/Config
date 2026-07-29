@@ -188,8 +188,7 @@ in
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.everforest-cursors
-   pkgs.everforest-gtk-theme
+   pkgs.tokyonight-gtk-theme
   ];
 
 
