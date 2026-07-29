@@ -5,38 +5,26 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		"folke/tokyonight.nvim",
-		opts = {
-			-- Available: "storm", "moon", "night", "day"
-			style = "night",
+		"sainnhe/everforest",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Everforest options
+			vim.g.everforest_background = "hard" -- hard | medium | soft
+			vim.g.everforest_enable_italic = 1
+			vim.g.everforest_disable_italic_comment = 0
+			vim.g.everforest_transparent_background = 1
+			vim.g.everforest_dim_inactive_windows = 1
+			vim.g.everforest_sign_column_background = "none"
+			vim.g.everforest_ui_contrast = "high"
+			vim.g.everforest_show_eob = 0
+			vim.g.everforest_better_performance = 1
 
-			transparent = true,
-			terminal_colors = true,
-			dim_inactive = true,
-			lualine_bold = true,
+			vim.o.termguicolors = true
+			vim.o.background = "dark"
 
-			styles = {
-				comments = { italic = true },
-				keywords = { italic = true },
-				functions = { italic = true },
-				variables = {},
-
-				sidebars = "transparent",
-				floats = "transparent",
-			},
-
-			on_highlights = function(hl, colors)
-				-- Keep the current line visible with transparency enabled
-				hl.CursorLine = {
-					bg = colors.bg_highlight,
-				}
-
-				-- Clearer visual-mode selection
-				hl.Visual = {
-					bg = colors.bg_visual,
-				}
-			end,
-		},
+			vim.cmd.colorscheme("everforest")
+		end,
 	},
 	{
 		"LazyVim/LazyVim",
@@ -277,6 +265,15 @@ return {
 			-- <leader>tt to toggle terminal
 			vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { desc = "Toggle Terminal" })
 		end,
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {},
 	},
 	------------------------------------------------------------------
 	-- Debugging
