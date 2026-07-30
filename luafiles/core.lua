@@ -4,27 +4,54 @@ return {
   -- Colorscheme (LOAD FIRST)
   -- UI / Appearance
   ------------------------------------------------------------------
-  {
-    "sainnhe/everforest",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Everforest options
-      vim.g.everforest_background = "hard" -- hard | medium | soft
-      vim.g.everforest_enable_italic = 1
-      vim.g.everforest_disable_italic_comment = 0
-      vim.g.everforest_transparent_background = 1
-      vim.g.everforest_dim_inactive_windows = 1
-      vim.g.everforest_sign_column_background = "none"
-      vim.g.everforest_ui_contrast = "high"
-      vim.g.everforest_show_eob = 0
-      vim.g.everforest_better_performance = 1
+    {
+      "catppuccin/nvim",
+      name = "catppuccin",
+      priority = 1000,
+      opts = {
+        flavour = "mocha",
+        transparent_background = true,
 
-      vim.o.termguicolors = true
-      vim.o.background = "dark"
+        styles = {
+          comments = { "italic" },
+          conditionals = { "italic" },
+          keywords = { "italic" },
+          functions = { "italic" },
+        },
 
-      vim.cmd.colorscheme("everforest")
-    end,
+        integrations = {
+          blink_cmp = true,
+          gitsigns = true,
+          indent_blankline = {
+            enabled = true,
+            scope_color = "lavender",
+            colored_indent_levels = false,
+          },
+          mason = true,
+          native_lsp = {
+            enabled = true,
+            underlines = {
+              errors = { "undercurl" },
+              hints = { "undercurl" },
+              warnings = { "undercurl" },
+              information = { "undercurl" },
+            },
+          },
+          noice = true,
+          notify = true,
+          snacks = true,
+          treesitter = true,
+          which_key = true,
+        },
+      },
+    },
+
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "catppuccin-mocha",
+      },
+    },
   },
   {
     "LazyVim/LazyVim",
