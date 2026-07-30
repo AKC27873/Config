@@ -188,7 +188,8 @@ in
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.tokyonight-gtk-theme
+   pkgs.everforest-cursors
+   pkgs.everforest-gtk-theme
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
