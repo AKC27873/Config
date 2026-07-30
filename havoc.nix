@@ -188,10 +188,8 @@ in
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.catppuccin
-   pkgs.catppuccin-gtk
-   pkgs.catppuccin-cursors
-   pkgs.catppuccin-discord
+   pkgs.everforest-gtk-theme
+   pkgs.everforest-cursors
 
   ];
 
