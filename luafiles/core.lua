@@ -4,64 +4,50 @@ return {
 	-- Colorscheme (LOAD FIRST)
 	-- UI / Appearance
 	------------------------------------------------------------------
+
 	{
-		{
-			"neanias/everforest-nvim",
-			version = false,
-			lazy = false,
-			priority = 1000,
+		"navarasu/onedark.nvim",
+		lazy = false,
+		priority = 1000,
 
-			config = function()
-				vim.o.background = "dark"
-				vim.o.termguicolors = true
+		config = function()
+			require("onedark").setup({
+				-- dark | darker | cool | deep | warm | warmer
+				style = "darker",
 
-				require("everforest").setup({
-					-- soft | medium | hard
-					background = "hard",
+				-- Use your terminal background
+				transparent = true,
 
-					-- 0 = normal
-					-- 1 = transparent editor
-					-- 2 = more UI elements transparent
-					transparent_background_level = 1,
+				-- Match terminal ANSI colors to OneDark
+				term_colors = true,
 
-					-- Italic keywords and syntax
-					italics = true,
+				-- Hide ~ at the end of the buffer
+				ending_tildes = false,
 
-					-- Keep comments italic
-					disable_italic_comments = false,
+				-- Syntax styling
+				code_style = {
+					comments = "italic",
+					keywords = "italic",
+					functions = "none",
+					strings = "none",
+					variables = "none",
+				},
 
-					-- Clean sign column
-					sign_column_background = "none",
+				-- Cleaner diagnostics
+				diagnostics = {
+					darker = true,
+					undercurl = true,
+					background = false,
+				},
 
-					-- high | low
-					ui_contrast = "high",
+				-- Keep lualine transparent
+				lualine = {
+					transparent = true,
+				},
+			})
 
-					-- Dim inactive splits
-					dim_inactive_windows = true,
-
-					-- Hide ~ at end of buffer
-					show_eob = false,
-
-					-- Diagnostic styling
-					diagnostic_text_highlight = false,
-					diagnostic_virtual_text = "coloured",
-					diagnostic_line_highlight = false,
-
-					-- none | dimmed
-					inlay_hints_background = "none",
-
-					-- bright | dim
-					float_style = "bright",
-				})
-			end,
-		},
-
-		{
-			"LazyVim/LazyVim",
-			opts = {
-				colorscheme = "everforest",
-			},
-		},
+			require("onedark").load()
+		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",

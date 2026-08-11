@@ -188,8 +188,9 @@ in
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.catppuccin-gtk
-   pkgs.catppuccin
+   pkgs.whitesur-icon-theme
+   pkgs.whitesur-gtk-theme
+   pkgs.whitesur-cursors
   ];
 
 
