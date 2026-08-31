@@ -218,6 +218,8 @@ virtualisation.libvirtd = {
     swtpm.enable = true;
     };
   };
+  # enabling Virt manager 
+  programs.virt-manager.enable = true;
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
