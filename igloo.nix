@@ -23,8 +23,8 @@ in
     ];
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
-  environment.shells = with pkgs; [zsh];
-  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [fish];
+  users.defaultUserShell = pkgs.fish;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -109,7 +109,7 @@ in
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "docker" ];
     packages = with pkgs; [
      thunderbird
-     zsh
+     fish
     ];
   };
   programs.neovim = {
@@ -207,7 +207,7 @@ in
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
   services.tailscale.enable = true;
   virtualisation.docker.enable = true;
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
 virtualisation.libvirtd = {
   enable = true;
