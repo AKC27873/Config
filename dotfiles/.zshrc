@@ -54,3 +54,9 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # Starship
 eval "$(starship init zsh)"
 
+# syntax and auto complete
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Keep syntax highlighting at the very end
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
