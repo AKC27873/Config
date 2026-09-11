@@ -155,8 +155,6 @@ in
    pkgs.xclip
    pkgs.brightnessctl
    pkgs.libreoffice
-   pkgs.discord
-   # pkgsUnstable.tailscale
    pkgs.unzip
    pkgs.git
    pkgs.python314
