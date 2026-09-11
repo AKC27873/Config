@@ -7,27 +7,55 @@ return {
 
 	{
 		{
-			"loctvl842/monokai-pro.nvim",
+			"navarasu/onedark.nvim",
 			lazy = false,
 			priority = 1000,
 
-			opts = {
-				transparent_background = true,
-				terminal_colors = true,
-				devicons = true,
-				filter = "classic", -- classic | octagon | pro | machine | ristretto | spectrum
+			config = function()
+				require("onedark").setup({
+					-- dark | darker | cool | deep | warm | warmer
+					style = "darker",
 
-				styles = {
-					comment = { italic = true },
-					keyword = { italic = true },
-				},
-			},
+					-- Use your terminal background
+					transparent = true,
+
+					-- Match terminal ANSI colors to OneDark
+					term_colors = true,
+
+					-- Hide ~ at the end of the buffer
+					ending_tildes = false,
+
+					-- Syntax styling
+					code_style = {
+						comments = "italic",
+						keywords = "italic",
+						functions = "italic",
+						strings = "italic",
+						variables = "none",
+					},
+
+					-- Cleaner diagnostics
+					diagnostics = {
+						darker = true,
+						undercurl = true,
+						background = false,
+					},
+
+					-- Keep lualine transparent
+					lualine = {
+						transparent = true,
+					},
+				})
+
+				require("onedark").load()
+			end,
 		},
 
+		-- Tell LazyVim that OneDark is the default colorscheme
 		{
 			"LazyVim/LazyVim",
 			opts = {
-				colorscheme = "monokai-pro",
+				colorscheme = "onedark",
 			},
 		},
 	},
