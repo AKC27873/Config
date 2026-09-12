@@ -119,7 +119,7 @@ in
     vimAlias = true;
   };
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
@@ -140,6 +140,7 @@ in
    pkgsUnstable.tree-sitter
    pkgsUnstable.obsidian
    pkgsUnstable.librewolf
+   pkgsUnstable.brave
    pkgs.powershell
    pkgsUnstable.jq
    pkgs.gcc
