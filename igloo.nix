@@ -65,8 +65,12 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.desktopManager.xfce.enable = true;
+  
+  # KDE Plasma 
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -130,7 +134,7 @@ in
    pkgsUnstable.alacritty
    pkgsUnstable.gh
    pkgs.bluez
-   pkgs.blueman
+   pkgs.kdePackages.bluedevil
    pkgs.wget
    pkgsUnstable.tmux
    pkgsUnstable.busybox
@@ -173,15 +177,6 @@ in
    pkgsUnstable.tinygo
    pkgsUnstable.lld
    pkgs.starship
-   pkgs.xfce.thunar
-   pkgs.xfce.thunar-volman  # USB/removable media support
-   pkgs.xfce.thunar-archive-plugin  # Archive support
-   # XFCE enhancements
-   pkgs.xfce.xfce4-whiskermenu-plugin
-   pkgs.xfce.xfce4-pulseaudio-plugin
-   pkgs.xfce.xfce4-weather-plugin
-   pkgs.xfce.xfce4-systemload-plugin
-   pkgs.xfce.xfce4-clipman-plugin
 
    # Themes and fonts
    pkgs.nerd-fonts.jetbrains-mono
