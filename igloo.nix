@@ -142,9 +142,6 @@ in
    pkgsUnstable.inetutils
    pkgs.openvpn
    pkgsUnstable.tree-sitter
-   pkgsUnstable.obsidian
-   pkgsUnstable.librewolf
-   pkgsUnstable.brave
    pkgs.powershell
    pkgsUnstable.jq
    pkgs.gcc
