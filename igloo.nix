@@ -167,6 +167,7 @@ in
    pkgs.curl
    pkgs.docker
    pkgs.docker-compose
+   pkgs.discord
    pkgs.spotify
    pkgs.virtio-win
    pkgs.qemu
