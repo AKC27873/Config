@@ -133,6 +133,7 @@ in
    pkgsUnstable.alacritty-theme
    pkgsUnstable.alacritty
    pkgsUnstable.gh
+   pkgs.devenv
    pkgs.bluez
    pkgs.kdePackages.bluedevil
    pkgs.wget
