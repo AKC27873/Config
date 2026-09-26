@@ -7,44 +7,54 @@ return {
 
 	{
 		{
-			"folke/tokyonight.nvim",
-			opts = {
-				-- Available: "storm", "moon", "night", "day"
-				style = "night",
+			"navarasu/onedark.nvim",
+			lazy = false,
+			priority = 1000,
 
-				transparent = true,
-				terminal_colors = true,
-				dim_inactive = true,
-				lualine_bold = true,
+			config = function()
+				require("onedark").setup({
+					-- dark | darker | cool | deep | warm | warmer
+					style = "darker",
 
-				styles = {
-					comments = { italic = true },
-					keywords = { italic = true },
-					functions = { italic = true },
-					variables = {},
+					-- Use your terminal background
+					transparent = true,
 
-					sidebars = "transparent",
-					floats = "transparent",
-				},
+					-- Match terminal ANSI colors to OneDark
+					term_colors = true,
 
-				on_highlights = function(hl, colors)
-					-- Keep the current line visible with transparency enabled
-					hl.CursorLine = {
-						bg = colors.bg_highlight,
-					}
+					-- Hide ~ at the end of the buffer
+					ending_tildes = false,
 
-					-- Clearer visual-mode selection
-					hl.Visual = {
-						bg = colors.bg_visual,
-					}
-				end,
-			},
+					-- Syntax styling
+					code_style = {
+						comments = "italic",
+						keywords = "italic",
+						functions = "none",
+						strings = "none",
+						variables = "none",
+					},
+
+					-- Cleaner diagnostics
+					diagnostics = {
+						darker = true,
+						undercurl = true,
+						background = false,
+					},
+
+					-- Keep lualine transparent
+					lualine = {
+						transparent = true,
+					},
+				})
+
+				require("onedark").load()
+			end,
 		},
 
 		{
 			"LazyVim/LazyVim",
 			opts = {
-				colorscheme = "tokyonight",
+				colorscheme = "onedark",
 			},
 		},
 	},
