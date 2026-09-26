@@ -145,7 +145,6 @@ in
    pkgsUnstable.tree-sitter
    pkgs.powershell
    pkgsUnstable.jq
-   pkgs.gcc
    pkgs.clang
    pkgs.gnumake
    pkgs.ripgrep
@@ -159,6 +158,8 @@ in
    pkgs.brightnessctl
    pkgs.libreoffice
    pkgs.unzip
+   pkgs.bat
+   pkgs.bat-extras.core
    pkgs.git
    pkgs.python314
    pkgs.python313Packages.uv

@@ -6,7 +6,7 @@ if status is-interactive
     alias ll='eza -lah --icons'
     alias la='eza -a --icons'
     alias lt='eza --tree --icons'
-    alias grep='rg --color=always'
+    alias man='batman'
     set -gx GOPATH /opt/golang
     # Syntax highlighting
     set -g fish_color_command green
