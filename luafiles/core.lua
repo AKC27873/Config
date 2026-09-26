@@ -7,55 +7,44 @@ return {
 
 	{
 		{
-			"navarasu/onedark.nvim",
-			lazy = false,
-			priority = 1000,
+			"folke/tokyonight.nvim",
+			opts = {
+				-- Available: "storm", "moon", "night", "day"
+				style = "night",
 
-			config = function()
-				require("onedark").setup({
-					-- dark | darker | cool | deep | warm | warmer
-					style = "darker",
+				transparent = true,
+				terminal_colors = true,
+				dim_inactive = true,
+				lualine_bold = true,
 
-					-- Use your terminal background
-					transparent = true,
+				styles = {
+					comments = { italic = true },
+					keywords = { italic = true },
+					functions = { italic = true },
+					variables = {},
 
-					-- Match terminal ANSI colors to OneDark
-					term_colors = true,
+					sidebars = "transparent",
+					floats = "transparent",
+				},
 
-					-- Hide ~ at the end of the buffer
-					ending_tildes = false,
+				on_highlights = function(hl, colors)
+					-- Keep the current line visible with transparency enabled
+					hl.CursorLine = {
+						bg = colors.bg_highlight,
+					}
 
-					-- Syntax styling
-					code_style = {
-						comments = "italic",
-						keywords = "italic",
-						functions = "italic",
-						strings = "italic",
-						variables = "none",
-					},
-
-					-- Cleaner diagnostics
-					diagnostics = {
-						darker = true,
-						undercurl = true,
-						background = false,
-					},
-
-					-- Keep lualine transparent
-					lualine = {
-						transparent = true,
-					},
-				})
-
-				require("onedark").load()
-			end,
+					-- Clearer visual-mode selection
+					hl.Visual = {
+						bg = colors.bg_visual,
+					}
+				end,
+			},
 		},
 
-		-- Tell LazyVim that OneDark is the default colorscheme
 		{
 			"LazyVim/LazyVim",
 			opts = {
-				colorscheme = "onedark",
+				colorscheme = "tokyonight",
 			},
 		},
 	},
