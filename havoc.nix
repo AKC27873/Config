@@ -63,12 +63,9 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   # Enable the XFCE Desktop Environment.
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.desktopManager.xfce.enable = true;
+   services.xserver.displayManager.lightdm.enable = true;
+   services.xserver.desktopManager.xfce.enable = true;
   
-  # KDE Plasma 
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -136,7 +133,7 @@ in
    pkgsUnstable.gh
    pkgs.devenv
    pkgs.bluez
-   pkgs.kdePackages.bluedevil
+   pkgs.blueman
    pkgsUnstable.tree-sitter
    pkgs.wget
    pkgsUnstable.tmux
