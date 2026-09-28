@@ -4,7 +4,7 @@ if status is-interactive
     alias ll='eza -lah --icons'
     alias la='eza -a --icons'
     alias lt='eza --tree --icons'
-    alias man='batman'
+    alias man='batman' # set -Ux BAT_THEME TwoDark
     set -gx GOPATH /opt/golang
     # OneDark syntax highlighting
     set -g fish_color_command '#61AFEF' # blue
