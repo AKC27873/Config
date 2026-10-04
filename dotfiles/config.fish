@@ -1,22 +1,25 @@
 if status is-interactive
+
+    starship init fish | source
     set fish_greeting ""
     alias ls='eza --icons'
     alias ll='eza -lah --icons'
     alias la='eza -a --icons'
     alias lt='eza --tree --icons'
+    alias man='batman'
     alias cat='bat -p'
-    alias man='batman' # set -Ux BAT_THEME TwoDark
+    # batpipe
     set -gx GOPATH /opt/golang
-    # OneDark syntax highlighting
-    set -g fish_color_command '#61AFEF' # blue
-    set -g fish_color_param '#ABB2BF' # foreground
-    set -g fish_color_option '#56B6C2' # cyan
-    set -g fish_color_quote '#98C379' # green
-    set -g fish_color_error '#E06C75' # red
-    set -g fish_color_comment '#5C6370' # comment gray
-    set -g fish_color_operator '#C678DD' # purple
-    set -g fish_color_redirection '#56B6C2' # cyan
-    set -g fish_color_end '#C678DD' # purple
-    set -g fish_color_escape '#D19A66' # orange
-    set -g fish_color_autosuggestion '#5C6370' # muted gray
+    # Nordic syntax highlighting
+    set -g fish_color_command '#81A1C1' # frost blue
+    set -g fish_color_param '#D8DEE9' # snowstorm foreground
+    set -g fish_color_option '#88C0D0' # cyan
+    set -g fish_color_quote '#A3BE8C' # green
+    set -g fish_color_error '#BF616A' # red
+    set -g fish_color_comment '#616E88' # muted blue-gray
+    set -g fish_color_operator '#B48EAD' # purple
+    set -g fish_color_redirection '#88C0D0' # cyan
+    set -g fish_color_end '#81A1C1' # frost blue
+    set -g fish_color_escape '#D08770' # orange
+    set -g fish_color_autosuggestion '#4C566A' # polar night gray
 end

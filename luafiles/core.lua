@@ -6,57 +6,35 @@ return {
 	------------------------------------------------------------------
 
 	{
-		{
-			"navarasu/onedark.nvim",
-			lazy = false,
-			priority = 1000,
-
-			config = function()
-				require("onedark").setup({
-					-- dark | darker | cool | deep | warm | warmer
-					style = "darker",
-
-					-- Use your terminal background
-					transparent = true,
-
-					-- Match terminal ANSI colors to OneDark
-					term_colors = true,
-
-					-- Hide ~ at the end of the buffer
-					ending_tildes = false,
-
-					-- Syntax styling
-					code_style = {
-						comments = "italic",
-						keywords = "italic",
-						functions = "none",
-						strings = "none",
-						variables = "none",
-					},
-
-					-- Cleaner diagnostics
-					diagnostics = {
-						darker = true,
-						undercurl = true,
-						background = false,
-					},
-
-					-- Keep lualine transparent
-					lualine = {
-						transparent = true,
-					},
-				})
-
-				require("onedark").load()
-			end,
-		},
-
-		{
-			"LazyVim/LazyVim",
-			opts = {
-				colorscheme = "onedark",
+		"AlexvZyl/nordic.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = {
+				bg = false,
+				float = false,
+			},
+			bright_border = false,
+			reduced_blue = true,
+			italic = {
+				comments = true,
+				keywords = false,
+				functions = false,
+				strings = false,
+				variables = false,
+			},
+			cursorline = {
+				bold = false,
+				theme = "dark",
+			},
+			noice = {
+				style = "classic",
 			},
 		},
+		config = function(_, opts)
+			require("nordic").setup(opts)
+			require("nordic").load()
+		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",
