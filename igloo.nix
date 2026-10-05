@@ -173,23 +173,16 @@ in
    pkgsUnstable.tinygo
    pkgsUnstable.lld
    pkgs.starship
-   pkgs.xfce.thunar
-   pkgs.xfce.thunar-volman  # USB/removable media support
-   pkgs.xfce.thunar-archive-plugin  # Archive support
-   # XFCE enhancements
-   pkgs.xfce4-whiskermenu-plugin
-   pkgs.xfce4-pulseaudio-plugin
-   pkgs.xfce4-weather-plugin
-   pkgs.xfce4-systemload-plugin
-   pkgs.xfce4-clipman-plugin
 
    # Themes and fonts
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.whitesur-icon-theme
-   pkgs.whitesur-gtk-theme
-   pkgs.whitesur-cursors
+   pkgs.catppuccin
+   pkgs.catppuccin-kde
+   pkgs.catppuccin-gtk
+   pkgs.catppuccin-cursors
+   pkgs.catppuccin-discord
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

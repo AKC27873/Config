@@ -180,9 +180,11 @@ in
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.whitesur-icon-theme
-   pkgs.whitesur-gtk-theme
-   pkgs.whitesur-cursors
+   pkgs.catppuccin
+   pkgs.catppuccin-kde
+   pkgs.catppuccin-gtk
+   pkgs.catppuccin-cursors
+   pkgs.catppuccin-discord
   ];
 
 

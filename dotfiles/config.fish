@@ -10,16 +10,15 @@ if status is-interactive
     alias cat='bat -p'
     # batpipe
     set -gx GOPATH /opt/golang
-    # Nordic syntax highlighting
-    set -g fish_color_command '#81A1C1' # frost blue
-    set -g fish_color_param '#D8DEE9' # snowstorm foreground
-    set -g fish_color_option '#88C0D0' # cyan
-    set -g fish_color_quote '#A3BE8C' # green
-    set -g fish_color_error '#BF616A' # red
-    set -g fish_color_comment '#616E88' # muted blue-gray
-    set -g fish_color_operator '#B48EAD' # purple
-    set -g fish_color_redirection '#88C0D0' # cyan
-    set -g fish_color_end '#81A1C1' # frost blue
-    set -g fish_color_escape '#D08770' # orange
-    set -g fish_color_autosuggestion '#4C566A' # polar night gray
+    set -g fish_color_command '#89B4FA' # Blue
+    set -g fish_color_param '#CDD6F4' # Text
+    set -g fish_color_option '#89DCEB' # Sky
+    set -g fish_color_quote '#A6E3A1' # Green
+    set -g fish_color_error '#F38BA8' # Red
+    set -g fish_color_comment '#6C7086' # Overlay 0
+    set -g fish_color_operator '#CBA6F7' # Mauve
+    set -g fish_color_redirection '#89DCEB' # Sky
+    set -g fish_color_end '#89B4FA' # Blue
+    set -g fish_color_escape '#FAB387' # Peach
+    set -g fish_color_autosuggestion '#585B70' # Surface 2
 end

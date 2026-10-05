@@ -4,36 +4,58 @@ return {
 	-- Colorscheme (LOAD FIRST)
 	-- UI / Appearance
 	------------------------------------------------------------------
-
 	{
-		"AlexvZyl/nordic.nvim",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		lazy = false,
 		priority = 1000,
 		opts = {
-			transparent = {
-				bg = false,
-				float = false,
+			flavour = "mocha",
+
+			background = {
+				dark = "mocha",
 			},
-			bright_border = false,
-			reduced_blue = true,
-			italic = {
-				comments = true,
-				keywords = false,
-				functions = false,
-				strings = false,
-				variables = false,
+
+			transparent_background = false,
+			show_end_of_buffer = false,
+			term_colors = true,
+
+			dim_inactive = {
+				enabled = true,
+				shade = "dark",
+				percentage = 0.10,
 			},
-			cursorline = {
-				bold = false,
-				theme = "dark",
+
+			styles = {
+				comments = { "italic" },
+				conditionals = { "italic" },
+				loops = {},
+				functions = { "italic" },
+				keywords = { "italic" },
+				strings = {},
+				variables = {},
+				numbers = {},
+				booleans = {},
+				properties = {},
+				types = {},
+				operators = {},
 			},
-			noice = {
-				style = "classic",
+
+			integrations = {
+				blink_cmp = true,
+				gitsigns = true,
+				native_lsp = {
+					enabled = true,
+				},
+				snacks = true,
+				treesitter = true,
+				which_key = true,
 			},
 		},
+
 		config = function(_, opts)
-			require("nordic").setup(opts)
-			require("nordic").load()
+			require("catppuccin").setup(opts)
+			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 	{
