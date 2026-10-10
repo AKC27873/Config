@@ -5,58 +5,57 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			flavour = "mocha",
+		{
+			"navarasu/onedark.nvim",
+			lazy = false,
+			priority = 1000,
 
-			background = {
-				dark = "mocha",
-			},
+			config = function()
+				require("onedark").setup({
+					-- dark | darker | cool | deep | warm | warmer
+					style = "darker",
 
-			transparent_background = false,
-			show_end_of_buffer = false,
-			term_colors = true,
+					-- Use your terminal background
+					transparent = true,
 
-			dim_inactive = {
-				enabled = true,
-				shade = "dark",
-				percentage = 0.10,
-			},
+					-- Match terminal ANSI colors to OneDark
+					term_colors = true,
 
-			styles = {
-				comments = { "italic" },
-				conditionals = { "italic" },
-				loops = {},
-				functions = { "italic" },
-				keywords = { "italic" },
-				strings = {},
-				variables = {},
-				numbers = {},
-				booleans = {},
-				properties = {},
-				types = {},
-				operators = {},
-			},
+					-- Hide ~ at the end of the buffer
+					ending_tildes = false,
 
-			integrations = {
-				blink_cmp = true,
-				gitsigns = true,
-				native_lsp = {
-					enabled = true,
-				},
-				snacks = true,
-				treesitter = true,
-				which_key = true,
-			},
+					-- Syntax styling
+					code_style = {
+						comments = "italic",
+						keywords = "italic",
+						functions = "none",
+						strings = "none",
+						variables = "none",
+					},
+
+					-- Cleaner diagnostics
+					diagnostics = {
+						darker = true,
+						undercurl = true,
+						background = false,
+					},
+
+					-- Keep lualine transparent
+					lualine = {
+						transparent = true,
+					},
+				})
+
+				require("onedark").load()
+			end,
 		},
 
-		config = function(_, opts)
-			require("catppuccin").setup(opts)
-			vim.cmd.colorscheme("catppuccin")
-		end,
+		{
+			"LazyVim/LazyVim",
+			opts = {
+				colorscheme = "onedark",
+			},
+		},
 	},
 	{
 		"nvim-lualine/lualine.nvim",

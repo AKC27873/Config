@@ -178,11 +178,10 @@ in
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
-   pkgs.catppuccin
-   pkgs.catppuccin-kde
-   pkgs.catppuccin-gtk
-   pkgs.catppuccin-cursors
-   pkgs.catppuccin-discord
+   pkgs.whitesur-kde
+   pkgs.whitesur-cursors    
+   pkgs.whitesur-gtk-theme
+   pkgs.whitesur-icon-theme
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
