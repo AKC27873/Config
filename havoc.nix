@@ -141,7 +141,7 @@ in
    pkgsUnstable.toybox
    pkgsUnstable.inetutils
    pkgs.openvpn
-   pkgsUnstable.clang
+   pkgsUnstable.gcc
    pkgsUnstable.jq
    pkgs.gnumake
    pkgs.ripgrep
@@ -181,7 +181,7 @@ in
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
    pkgs.whitesur-kde
-   pkgs.whitesur-cursors    
+   pkgs.whitesur-cursors
    pkgs.whitesur-gtk-theme
    pkgs.whitesur-icon-theme
   ];

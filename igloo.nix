@@ -142,7 +142,7 @@ in
    pkgsUnstable.tree-sitter
    pkgs.powershell
    pkgsUnstable.jq
-   pkgs.clang
+   pkgs.gcc
    pkgs.gnumake
    pkgs.ripgrep
    pkgs.fd
@@ -179,7 +179,7 @@ in
    pkgs.nerd-fonts.fira-code
    pkgs.bibata-cursors
    pkgs.whitesur-kde
-   pkgs.whitesur-cursors    
+   pkgs.whitesur-cursors
    pkgs.whitesur-gtk-theme
    pkgs.whitesur-icon-theme
   ];
