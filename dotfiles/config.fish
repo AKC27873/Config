@@ -1,24 +1,36 @@
 if status is-interactive
-
+    # Starship prompt
     starship init fish | source
-    set fish_greeting ""
-    alias ls='eza --icons'
-    alias ll='eza -lah --icons'
-    alias la='eza -a --icons'
-    alias lt='eza --tree --icons'
-    alias man='batman'
-    alias cat='bat -p'
-    # batpipe
+    set -g fish_greeting ""
+
+    # Eza aliases
+    alias ls 'eza --icons'
+    alias ll 'eza -lah --icons'
+    alias la 'eza -a --icons'
+    alias lt 'eza --tree --icons'
+
+    # Better man pages
+    alias man batman
+
+    # Go environment
     set -gx GOPATH /opt/golang
-    set -g fish_color_command '#89B4FA' # Blue
-    set -g fish_color_param '#CDD6F4' # Text
-    set -g fish_color_option '#89DCEB' # Sky
-    set -g fish_color_quote '#A6E3A1' # Green
-    set -g fish_color_error '#F38BA8' # Red
-    set -g fish_color_comment '#6C7086' # Overlay 0
-    set -g fish_color_operator '#CBA6F7' # Mauve
-    set -g fish_color_redirection '#89DCEB' # Sky
-    set -g fish_color_end '#89B4FA' # Blue
-    set -g fish_color_escape '#FAB387' # Peach
-    set -g fish_color_autosuggestion '#585B70' # Surface 2
+
+    # OneDark syntax highlighting
+    set -g fish_color_normal '#ABB2BF' # Foreground
+    set -g fish_color_command '#61AFEF' # Blue
+    set -g fish_color_param '#ABB2BF' # Light gray
+    set -g fish_color_option '#56B6C2' # Cyan
+    set -g fish_color_quote '#98C379' # Green
+    set -g fish_color_error '#E06C75' # Red
+    set -g fish_color_comment '#5C6370' # Muted gray
+    set -g fish_color_operator '#C678DD' # Purple
+    set -g fish_color_redirection '#56B6C2' # Cyan
+    set -g fish_color_end '#C678DD' # Purple
+    set -g fish_color_escape '#D19A66' # Orange
+    set -g fish_color_autosuggestion '#5C6370' # Muted gray
+
+    # Search and selection
+    set -g fish_color_search_match --background='#3E4451'
+    set -g fish_color_selection --background='#3E4451'
+    set -g fish_color_history_current --bold
 end
