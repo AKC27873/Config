@@ -6,54 +6,60 @@ return {
 	------------------------------------------------------------------
 	{
 		{
-			"navarasu/onedark.nvim",
+			"AlexvZyl/nordic.nvim",
 			lazy = false,
 			priority = 1000,
-
 			config = function()
-				require("onedark").setup({
-					-- dark | darker | cool | deep | warm | warmer
-					style = "darker",
+				require("nordic").setup({
+					-- Reduce the blue-heavy Nord palette
+					reduced_blue = true,
 
-					-- Use your terminal background
-					transparent = true,
-
-					-- Match terminal ANSI colors to OneDark
-					term_colors = true,
-
-					-- Hide ~ at the end of the buffer
-					ending_tildes = false,
-
-					-- Syntax styling
-					code_style = {
-						comments = "italic",
-						keywords = "italic",
-						functions = "none",
-						strings = "none",
-						variables = "none",
+					-- Transparent dark background
+					transparent = {
+						bg = false,
+						float = true,
 					},
 
-					-- Cleaner diagnostics
-					diagnostics = {
-						darker = true,
-						undercurl = true,
-						background = false,
+					-- Minimal styling
+					bold_keywords = true,
+					italic_comments = true,
+					bright_border = false,
+					swap_backgrounds = false,
+
+					-- Subtle cursor line
+					cursorline = {
+						theme = "dark",
+						bold = false,
+						bold_number = false,
+						blend = 0.85,
 					},
 
-					-- Keep lualine transparent
-					lualine = {
-						transparent = true,
+					-- Subtle visual selection
+					visual = {
+						theme = "dark",
+						bold = false,
+						bold_number = true,
+						blend = 0.85,
+					},
+
+					-- Clean floating windows
+					telescope = {
+						style = "flat",
+					},
+
+					noice = {
+						style = "flat",
 					},
 				})
 
-				require("onedark").load()
+				vim.cmd.colorscheme("nordic")
 			end,
 		},
 
 		{
 			"LazyVim/LazyVim",
 			opts = {
-				colorscheme = "onedark",
+				colorscheme = "nordic",
 			},
 		},
 	},

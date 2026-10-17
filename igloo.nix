@@ -177,7 +177,9 @@ in
    # Themes and fonts
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
-   pkgs.bibata-cursors
+   pkgs.nordic
+   pkgs.papirus-nord
+   pkgs.nordzy-icon-theme
    pkgs.whitesur-kde
    pkgs.whitesur-cursors
    pkgs.whitesur-gtk-theme
