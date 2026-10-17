@@ -5,55 +5,51 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
+		-- Dracula: minimal transparent dark theme
 		{
-			"navarasu/onedark.nvim",
+			"Mofiqul/dracula.nvim",
 			lazy = false,
 			priority = 1000,
+			opts = {
+				transparent_bg = true,
+				italic_comment = true,
+				show_end_of_buffer = false,
+				lualine_bg_color = nil,
 
-			config = function()
-				require("onedark").setup({
-					-- dark | darker | cool | deep | warm | warmer
-					style = "darker",
+				-- Keep the UI clean and transparent
+				overrides = {
+					Normal = { bg = "NONE" },
+					NormalNC = { bg = "NONE" },
+					SignColumn = { bg = "NONE" },
+					EndOfBuffer = { bg = "NONE" },
+					NormalFloat = { bg = "NONE" },
+					FloatBorder = { bg = "NONE" },
+					Pmenu = { bg = "NONE" },
+					TelescopeNormal = { bg = "NONE" },
+					TelescopeBorder = { bg = "NONE" },
 
-					-- Use your terminal background
-					transparent = true,
+					-- Subtle visual guides
+					LineNr = { fg = "#6272A4" },
+					CursorLineNr = { fg = "#F8F8F2", bold = true },
+					CursorLine = { bg = "#343746" },
+					ColorColumn = { bg = "NONE" },
 
-					-- Match terminal ANSI colors to OneDark
-					term_colors = true,
+					-- Minimal separators and popups
+					VertSplit = { fg = "#44475A", bg = "NONE" },
+					WinSeparator = { fg = "#44475A", bg = "NONE" },
+					PmenuSel = { bg = "#44475A", fg = "#F8F8F2" },
 
-					-- Hide ~ at the end of the buffer
-					ending_tildes = false,
-
-					-- Syntax styling
-					code_style = {
-						comments = "italic",
-						keywords = "italic",
-						functions = "none",
-						strings = "none",
-						variables = "none",
-					},
-
-					-- Cleaner diagnostics
-					diagnostics = {
-						darker = true,
-						undercurl = true,
-						background = false,
-					},
-
-					-- Keep lualine transparent
-					lualine = {
-						transparent = true,
-					},
-				})
-
-				require("onedark").load()
-			end,
+					-- Softer comments
+					Comment = { fg = "#858BA8", italic = true },
+				},
+			},
 		},
 
+		-- Set Dracula as the LazyVim default
 		{
 			"LazyVim/LazyVim",
 			opts = {
-				colorscheme = "onedark",
+				colorscheme = "dracula",
 			},
 		},
 	},
