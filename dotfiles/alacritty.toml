@@ -1,7 +1,5 @@
 [general]
-import = [
-  "./themes/themes/nordic.toml"
-]
+import = ["./themes/themes/nordic.toml"]
 [font]
 size = 18.0
 
