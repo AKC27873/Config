@@ -1,8 +1,13 @@
 [general]
-import = ["./themes/themes/nordic.toml"]
+import = [
+  # "./themes/themes/one_dark.toml"
+]
+
 [font]
 size = 18.0
 
 [font.normal]
 family = "Hack Nerd Font Mono"
 style = "Regular"
+
+
