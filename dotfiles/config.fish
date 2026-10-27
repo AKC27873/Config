@@ -2,7 +2,9 @@ if status is-interactive
     # Starship prompt
     starship init fish | source
     set -g fish_greeting ""
-
+    # bat theme
+    set -gx BAT_THEME Nord
+    #
     # Eza aliases
     alias ls 'eza --icons'
     alias ll 'eza -lah --icons'
