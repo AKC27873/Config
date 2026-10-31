@@ -1,6 +1,6 @@
 [general]
 import = [
-  # "./themes/themes/nordic.toml"
+  "./themes/themes/nordic.toml"
 ]
 
 [font]
