@@ -177,12 +177,8 @@ in
    # Themes and fonts
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
-   pkgs.catppuccin-cursors
-   pkgs.catppuccin-discord
-   pkgs.catppuccin
    pkgs.whitesur-kde
-   pkgs.catppuccin-kde
-   pkgs.whitesur-cursors    
+   pkgs.whitesur-cursors
    pkgs.whitesur-gtk-theme
    pkgs.whitesur-icon-theme
   ];
