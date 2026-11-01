@@ -44,8 +44,8 @@ if status is-interactive
     set -g fish_pager_color_progress '#CBA6F7'
 
     # Selected completion
-    set -g fish_pager_color_selected_background '#45475A'
-    set -g fish_pager_color_selected_prefix '#F5C2E7' --bold
-    set -g fish_pager_color_selected_completion '#CDD6F4'
-    set -g fish_pager_color_selected_description '#BAC2DE'
+    set -g fish_pager_color_selected_background --background='#CBA6F7'
+    set -g fish_pager_color_selected_prefix '#1E1E2E' --bold
+    set -g fish_pager_color_selected_completion '#1E1E2E' --bold
+    set -g fish_pager_color_selected_description '#313244'
 end
