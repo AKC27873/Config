@@ -2,9 +2,10 @@ if status is-interactive
     # Starship prompt
     starship init fish | source
     set -g fish_greeting ""
-    # bat theme
-    set -gx BAT_THEME Nord
-    #
+
+    # Bat theme
+    set -gx BAT_THEME "Catppuccin Mocha"
+
     # Eza aliases
     alias ls 'eza --icons'
     alias ll 'eza -lah --icons'
@@ -17,28 +18,34 @@ if status is-interactive
     # Go environment
     set -gx GOPATH /opt/golang
 
-    # Nordic syntax highlighting
-    set -g fish_color_normal '#D8DEE9'
-    set -g fish_color_command '#88C0D0'
-    set -g fish_color_param '#D8DEE9'
-    set -g fish_color_option '#81A1C1'
-    set -g fish_color_quote '#A3BE8C'
-    set -g fish_color_error '#BF616A'
-    set -g fish_color_comment '#616E88'
-    set -g fish_color_operator '#81A1C1'
-    set -g fish_color_redirection '#88C0D0'
-    set -g fish_color_end '#81A1C1'
-    set -g fish_color_escape '#D08770'
-    set -g fish_color_autosuggestion '#616E88'
+    # Catppuccin Mocha syntax highlighting
+    set -g fish_color_normal '#CDD6F4'
+    set -g fish_color_command '#89B4FA'
+    set -g fish_color_param '#CDD6F4'
+    set -g fish_color_option '#B4BEFE'
+    set -g fish_color_quote '#A6E3A1'
+    set -g fish_color_error '#F38BA8'
+    set -g fish_color_comment '#6C7086'
+    set -g fish_color_operator '#89DCEB'
+    set -g fish_color_redirection '#F5C2E7'
+    set -g fish_color_end '#CBA6F7'
+    set -g fish_color_escape '#FAB387'
+    set -g fish_color_autosuggestion '#6C7086'
 
     # Search and selection
-    set -g fish_color_search_match --background='#434C5E'
-    set -g fish_color_selection --background='#3B4252'
+    set -g fish_color_search_match --background='#45475A'
+    set -g fish_color_selection --background='#313244'
     set -g fish_color_history_current --bold
 
     # Completion menus
-    set -g fish_pager_color_prefix '#88C0D0' --bold
-    set -g fish_pager_color_completion '#D8DEE9'
-    set -g fish_pager_color_description '#81A1C1'
-    set -g fish_pager_color_progress '#88C0D0'
+    set -g fish_pager_color_prefix '#89B4FA' --bold
+    set -g fish_pager_color_completion '#CDD6F4'
+    set -g fish_pager_color_description '#A6ADC8'
+    set -g fish_pager_color_progress '#CBA6F7'
+
+    # Selected completion
+    set -g fish_pager_color_selected_background '#45475A'
+    set -g fish_pager_color_selected_prefix '#F5C2E7' --bold
+    set -g fish_pager_color_selected_completion '#CDD6F4'
+    set -g fish_pager_color_selected_description '#BAC2DE'
 end

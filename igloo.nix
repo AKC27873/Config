@@ -177,11 +177,12 @@ in
    # Themes and fonts
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
-   pkgs.nordic
-   pkgs.papirus-nord
-   pkgs.nordzy-icon-theme
+   pkgs.catppuccin-cursors
+   pkgs.catppuccin-discord
+   pkgs.catppuccin
    pkgs.whitesur-kde
-   pkgs.whitesur-cursors
+   pkgs.catppuccin-kde
+   pkgs.whitesur-cursors    
    pkgs.whitesur-gtk-theme
    pkgs.whitesur-icon-theme
   ];

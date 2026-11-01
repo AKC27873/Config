@@ -5,61 +5,58 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		{
-			"AlexvZyl/nordic.nvim",
-			lazy = false,
-			priority = 1000,
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			flavour = "mocha",
 
-			config = function()
-				require("nordic").setup({
-					-- Reduce blue for a softer, neutral palette.
-					reduced_blue = true,
+			background = {
+				dark = "mocha",
+			},
 
-					-- Keep a solid charcoal background.
-					transparent = {
-						bg = false,
-						float = false,
-					},
+			transparent_background = false,
+			show_end_of_buffer = false,
+			term_colors = true,
 
-					-- Avoid bright borders and distracting emphasis.
-					bright_border = false,
-					bold_keywords = true,
-					italic_comments = true,
+			dim_inactive = {
+				enabled = true,
+				shade = "dark",
+				percentage = 0.10,
+			},
 
-					-- Subtle cursorline for tracking your current line.
-					cursorline = {
-						bold = false,
-						bold_number = true,
-						theme = "light",
-						blend = 0.85,
-					},
+			styles = {
+				comments = { "italic" },
+				conditionals = { "italic" },
+				loops = {},
+				functions = { "bold" },
+				keywords = { "bold" },
+				strings = {},
+				variables = {},
+				numbers = {},
+				booleans = {},
+				properties = {},
+				types = {},
+				operators = {},
+			},
 
-					-- Muted visual selection.
-					visual = {
-						bold = true,
-						bold_number = true,
-						theme = "light",
-						blend = 0.85,
-					},
-
-					-- Keep floating windows clean.
-					telescope = {
-						style = "flat",
-					},
-
-					noice = {
-						style = "flat",
-					},
-				})
-			end,
-		},
-
-		{
-			"LazyVim/LazyVim",
-			opts = {
-				colorscheme = "nordic",
+			integrations = {
+				blink_cmp = true,
+				gitsigns = true,
+				native_lsp = {
+					enabled = true,
+				},
+				snacks = true,
+				treesitter = true,
+				which_key = true,
 			},
 		},
+
+		config = function(_, opts)
+			require("catppuccin").setup(opts)
+			vim.cmd.colorscheme("catppuccin")
+		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",
