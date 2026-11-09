@@ -112,6 +112,9 @@ in
      fish
     ];
   };
+
+  nix.settings.trusted-users = [ "root" "@wheel" ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -147,6 +150,7 @@ in
    pkgs.ripgrep
    pkgs.fd
    pkgs.nodejs_24
+   pkgs.devenv
    pkgsUnstable.binutils
    pkgs.glibc.dev
    pkgs.eza
@@ -155,6 +159,7 @@ in
    pkgs.brightnessctl
    pkgs.libreoffice
    pkgs.unzip
+   pkgs.p7zip
    pkgs.bat
    pkgs.bat-extras.core
    pkgs.git

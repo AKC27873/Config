@@ -113,6 +113,8 @@ in
      fish
     ];
   };
+  nix.settings.trusted-users = [ "root" "@wheel" ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -140,6 +142,7 @@ in
    pkgsUnstable.inetutils
    pkgs.openvpn
    pkgsUnstable.tree-sitter
+   pkgs.devenv
    pkgs.powershell
    pkgsUnstable.jq
    pkgs.gcc
@@ -155,6 +158,7 @@ in
    pkgs.brightnessctl
    pkgs.libreoffice
    pkgs.unzip
+   pkgs.p7zip
    pkgs.bat
    pkgs.bat-extras.core
    pkgs.git
