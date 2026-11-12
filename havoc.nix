@@ -182,6 +182,7 @@ in
    # Themes and fonts
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
+   pkgs.nordic
    pkgs.whitesur-kde
    pkgs.whitesur-cursors
    pkgs.whitesur-gtk-theme
