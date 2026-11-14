@@ -61,10 +61,14 @@ in
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  # Enable the XFCE Desktop Environment.
-   services.xserver.displayManager.lightdm.enable = true;
-   services.xserver.desktopManager.xfce.enable = true;
+  # services.xserver.enable = true;
+  # # Enable the XFCE Desktop Environment.
+  #  services.xserver.displayManager.lightdm.enable = true;
+  #  services.xserver.desktopManager.xfce.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  # Enable KDE applications
+  programs.kdeconnect.enable = true;
   
 
   # Configure keymap in X11
@@ -131,7 +135,9 @@ in
   # nix search wget
 
   environment.systemPackages = with pkgs; [
-   pkgsUnstable.ghostty
+   pkgsUnstable.alacritty
+   pkgs.alacritty-graphics
+   pkgs.alacritty-theme
    pkgsUnstable.gh
    pkgs.devenv
    pkgs.bluez
