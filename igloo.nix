@@ -129,8 +129,7 @@ in
   # nix search wget
 
   environment.systemPackages = with pkgs; [
-   pkgsUnstable.alacritty-theme
-   pkgsUnstable.alacritty
+   pkgsUnstable.ghostty
    pkgsUnstable.gh
    pkgs.devenv
    pkgs.bluez
