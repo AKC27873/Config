@@ -21,8 +21,17 @@ in
    nixpkgs.config.permittedInsecurePackages = [
   "openssl-1.1.1w"
     ];
-    hardware.bluetooth.enable = true;
-    hardware.bluetooth.powerOnBoot = true;
+   hardware.enableRedistributableFirmware = true;
+
+   hardware.bluetooth = {
+	   enable = true;
+	   powerOnBoot = true;
+	   settings = {
+		   General = {
+			   Experimental = true;
+		   };
+	   };
+   };
   environment.shells = with pkgs; [fish];
   users.defaultUserShell = pkgs.fish;
 
@@ -39,11 +48,7 @@ in
 
   # Enable networking
   networking.networkmanager.enable = true;
-  programs.virt-manager.enable = true;
-  virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-
-
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -62,7 +67,6 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
-
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
   # # Enable the XFCE Desktop Environment.
@@ -72,7 +76,6 @@ in
   services.desktopManager.plasma6.enable = true;
   # Enable KDE applications
   programs.kdeconnect.enable = true;
-  
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -118,6 +121,7 @@ in
      fish
     ];
   };
+
   nix.settings.trusted-users = [ "root" "@wheel" ];
 
   programs.neovim = {
@@ -126,7 +130,9 @@ in
     viAlias = true;
     vimAlias = true;
   };
-  # Install firefox.
+
+
+  #  Install firefox.
   programs.firefox.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -139,23 +145,21 @@ in
    pkgs.alacritty-theme
    pkgsUnstable.gh
    pkgs.devenv
-   pkgs.bluez
-   pkgs.blueman
+   pkgs.kdePackages.bluedevil
+   pkgsUnstable.tree-sitter
    pkgs.wget
    pkgsUnstable.tmux
    pkgsUnstable.busybox
    pkgsUnstable.toybox
    pkgsUnstable.inetutils
    pkgs.openvpn
-   pkgsUnstable.tree-sitter
-   pkgs.devenv
-   pkgs.powershell
+   pkgsUnstable.gcc
    pkgsUnstable.jq
-   pkgs.gcc
    pkgs.gnumake
    pkgs.ripgrep
    pkgs.fd
    pkgs.nodejs_24
+   pkgs.devenv
    pkgsUnstable.binutils
    pkgs.glibc.dev
    pkgs.eza
@@ -194,6 +198,7 @@ in
    pkgs.whitesur-icon-theme
   ];
 
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -218,14 +223,11 @@ virtualisation.libvirtd = {
     swtpm.enable = true;
     };
   };
+  # enabling Virt manager 
   programs.virt-manager.enable = true;
-
-  environment.sessionVariables = {
-    LIBVIRT_DEFAULT_URI = "qemu:///system";
-  };
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
