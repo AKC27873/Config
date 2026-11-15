@@ -5,61 +5,62 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		{
-			"AlexvZyl/nordic.nvim",
-			lazy = false,
-			priority = 1000,
-
-			config = function()
-				require("nordic").setup({
-					-- Reduce blue for a softer, neutral palette.
-					reduced_blue = true,
-
-					-- Keep a solid charcoal background.
-					transparent = {
-						bg = false,
-						float = false,
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			flavour = "mocha", -- latte, frappe, macchiato, mocha
+			background = {
+				dark = "mocha",
+			},
+			transparent_background = false,
+			term_colors = true,
+			dim_inactive = {
+				enabled = true,
+				shade = "dark",
+				percentage = 0.15,
+			},
+			styles = {
+				comments = { "italic" },
+				conditionals = { "italic" },
+				loops = {},
+				functions = { "bold" },
+				keywords = { "italic" },
+				strings = {},
+				variables = {},
+				numbers = {},
+				booleans = {},
+				properties = {},
+				types = {},
+				operators = {},
+			},
+			integrations = {
+				treesitter = true,
+				native_lsp = {
+					enabled = true,
+					underlines = {
+						errors = { "underline" },
+						hints = { "underline" },
+						warnings = { "underline" },
+						information = { "underline" },
 					},
-
-					-- Avoid bright borders and distracting emphasis.
-					bright_border = false,
-					bold_keywords = true,
-					italic_comments = false,
-
-					-- Subtle cursorline for tracking your current line.
-					cursorline = {
-						bold = false,
-						bold_number = true,
-						theme = "light",
-						blend = 0.85,
-					},
-
-					-- Muted visual selection.
-					visual = {
-						bold = true,
-						bold_number = true,
-						theme = "light",
-						blend = 0.85,
-					},
-
-					-- Keep floating windows clean.
-					telescope = {
-						style = "flat",
-					},
-
-					noice = {
-						style = "flat",
-					},
-				})
-			end,
-		},
-
-		{
-			"LazyVim/LazyVim",
-			opts = {
-				colorscheme = "nordic",
+				},
+				telescope = true,
+				nvimtree = true,
+				cmp = true,
+				gitsigns = true,
+				which_key = true,
+				indent_blankline = {
+					enabled = true,
+					colored_indent_levels = false,
+				},
 			},
 		},
+		config = function(_, opts)
+			require("catppuccin").setup(opts)
+			vim.cmd.colorscheme("catppuccin")
+		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",

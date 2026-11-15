@@ -135,9 +135,7 @@ in
   # nix search wget
 
   environment.systemPackages = with pkgs; [
-   pkgsUnstable.alacritty
-   pkgs.alacritty-graphics
-   pkgs.alacritty-theme
+   pkgsUnstable.ghostty
    pkgsUnstable.gh
    pkgs.devenv
    pkgs.bluez
@@ -187,7 +185,14 @@ in
    # Themes and fonts
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
-   pkgs.nordic
+   pkgs.nerd-fonts.jetbrains-mono
+   pkgs.nerd-fonts.fira-code
+   pkgs.catppuccin
+   pkgs.catppuccin-gtk
+   pkgs.catppuccin-sddm
+   pkgs.catppuccin-kde
+   pkgs.catppuccinifier-gui
+   pkgs.catppuccin-sddm-corners
    pkgs.whitesur-kde
    pkgs.whitesur-cursors
    pkgs.whitesur-gtk-theme
