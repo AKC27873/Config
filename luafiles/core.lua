@@ -5,62 +5,63 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		{
-			"AndresYague/dracula.nvim",
-			lazy = false,
-			priority = 1000,
-
-			opts = {
-				style = "default",
-				light_style = "day",
-
-				transparent = true,
-				terminal_colors = true,
-
-				styles = {
-					comments = { italic = true },
-					keywords = { italic = true },
-					functions = { bold = true },
-					variables = {},
-
-					sidebars = "dark",
-					floats = "dark",
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			flavour = "mocha", -- latte, frappe, macchiato, mocha
+			background = {
+				dark = "mocha",
+			},
+			transparent_background = false,
+			term_colors = true,
+			dim_inactive = {
+				enabled = true,
+				shade = "dark",
+				percentage = 0.15,
+			},
+			styles = {
+				comments = { "italic" },
+				conditionals = { "italic" },
+				loops = {},
+				functions = { "bold" },
+				keywords = { "italic" },
+				strings = {},
+				variables = {},
+				numbers = {},
+				booleans = {},
+				properties = {},
+				types = {},
+				operators = {},
+			},
+			integrations = {
+				treesitter = true,
+				native_lsp = {
+					enabled = true,
+					underlines = {
+						errors = { "underline" },
+						hints = { "underline" },
+						warnings = { "underline" },
+						information = { "underline" },
+					},
 				},
-
-				sidebars = {
-					"qf",
-					"help",
-					"terminal",
-				},
-
-				day_brightness = 0.3,
-				hide_inactive_statusline = false,
-				dim_inactive = false,
-				lualine_bold = false,
-
-				cache = true,
-				prefer_undercurl = true,
-
-				plugins = {
-					all = package.loaded.lazy == nil,
-					auto = true,
+				telescope = true,
+				nvimtree = true,
+				cmp = true,
+				gitsigns = true,
+				which_key = true,
+				indent_blankline = {
+					enabled = true,
+					colored_indent_levels = false,
 				},
 			},
-
-			config = function(_, opts)
-				require("dracula").setup(opts)
-				vim.cmd.colorscheme("dracula")
-			end,
 		},
-
-		{
-			"LazyVim/LazyVim",
-			opts = {
-				colorscheme = "dracula",
-			},
-		},
+		config = function(_, opts)
+			require("catppuccin").setup(opts)
+			vim.cmd.colorscheme("catppuccin")
+		end,
 	},
-
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
