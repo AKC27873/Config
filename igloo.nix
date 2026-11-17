@@ -191,12 +191,8 @@ in
    pkgs.nerd-fonts.fira-code
    pkgs.nerd-fonts.jetbrains-mono
    pkgs.nerd-fonts.fira-code
-   pkgs.catppuccin
-   pkgs.catppuccin-gtk
-   pkgs.catppuccin-sddm
-   pkgs.catppuccin-kde
-   pkgs.catppuccinifier-gui
-   pkgs.catppuccin-sddm-corners
+   pkgs.dracula-theme
+   pkgs.dracula-icon-theme
    pkgs.whitesur-kde
    pkgs.whitesur-cursors
    pkgs.whitesur-gtk-theme
