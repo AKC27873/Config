@@ -1,51 +1,51 @@
 if status is-interactive
-    # Starship prompt
+    # ── Starship prompt ─────────────────────────────
     starship init fish | source
     set -g fish_greeting ""
 
-    # Bat theme
-    set -gx BAT_THEME Catppuccin Mocha
-
-    # Eza aliases
+    # ── Eza aliases ─────────────────────────────────
     alias ls 'eza --icons'
     alias ll 'eza -lah --icons'
     alias la 'eza -a --icons'
     alias lt 'eza --tree --icons'
 
-    # Better man pages
+    # ── Better man pages ────────────────────────────
     alias man batman
+    set -gx BAT_THEME OneHalfDark
 
-    # Go environment
+    # ── Go environment ──────────────────────────────
     set -gx GOPATH /opt/golang
+    fish_add_path $GOPATH/bin
 
-    # Catppuccin Mocha syntax highlighting
-    set -g fish_color_normal '#CDD6F4'
-    set -g fish_color_command '#89B4FA'
-    set -g fish_color_param '#CDD6F4'
-    set -g fish_color_option '#F9E2AF'
-    set -g fish_color_quote '#A6E3A1'
-    set -g fish_color_error '#F38BA8'
-    set -g fish_color_comment '#6C7086'
-    set -g fish_color_operator '#89DCEB'
-    set -g fish_color_redirection '#CBA6F7'
-    set -g fish_color_end '#CBA6F7'
-    set -g fish_color_escape '#FAB387'
-    set -g fish_color_autosuggestion '#6C7086'
+    # ── OneDark syntax highlighting ──────────────────
+    set -g fish_color_normal ABB2BF
+    set -g fish_color_command 98C379
+    set -g fish_color_keyword C678DD
+    set -g fish_color_quote 98C379
+    set -g fish_color_redirection 56B6C2
+    set -g fish_color_end C678DD
+    set -g fish_color_error E06C75
+    set -g fish_color_param ABB2BF
+    set -g fish_color_comment 5C6370
+    set -g fish_color_operator C678DD
+    set -g fish_color_escape D19A66
+    set -g fish_color_autosuggestion 5C6370
+    set -g fish_color_cancel E06C75
+    set -g fish_color_option 56B6C2
+    set -g fish_color_valid_path --underline
 
-    # Search and selection
-    set -g fish_color_search_match --background='#45475A'
-    set -g fish_color_selection --background='#313244' --bold
+    # ── Selection and search ────────────────────────
+    set -g fish_color_selection --background=3E4451
+    set -g fish_color_search_match --background=3E4451
     set -g fish_color_history_current --bold
 
-    # Completion menus
-    set -g fish_pager_color_prefix '#89B4FA' --bold
-    set -g fish_pager_color_completion '#CDD6F4'
-    set -g fish_pager_color_description '#6C7086'
-    set -g fish_pager_color_progress '#CBA6F7'
-
-    # Selected completion
-    set -g fish_pager_color_selected_background --background='#313244'
-    set -g fish_pager_color_selected_prefix '#CBA6F7' --bold
-    set -g fish_pager_color_selected_completion '#CDD6F4' --bold
-    set -g fish_pager_color_selected_description '#A6ADC8'
+    # ── Completion menu ─────────────────────────────
+    set -g fish_pager_color_prefix 56B6C2 --bold
+    set -g fish_pager_color_completion ABB2BF
+    set -g fish_pager_color_description 7F848E
+    set -g fish_pager_color_progress 61AFEF
+    set -g fish_pager_color_selected_background --background=3E4451
+    set -g fish_pager_color_selected_prefix 56B6C2 --bold
+    set -g fish_pager_color_selected_completion ABB2BF
+    set -g fish_pager_color_selected_description 7F848E
 end

@@ -5,62 +5,57 @@ return {
 	-- UI / Appearance
 	------------------------------------------------------------------
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			flavour = "mocha", -- latte, frappe, macchiato, mocha
-			background = {
-				dark = "mocha",
-			},
-			transparent_background = false,
-			term_colors = true,
-			dim_inactive = {
-				enabled = true,
-				shade = "dark",
-				percentage = 0.15,
-			},
-			styles = {
-				comments = { "italic" },
-				conditionals = { "italic" },
-				loops = {},
-				functions = { "bold" },
-				keywords = { "italic" },
-				strings = {},
-				variables = {},
-				numbers = {},
-				booleans = {},
-				properties = {},
-				types = {},
-				operators = {},
-			},
-			integrations = {
-				treesitter = true,
-				native_lsp = {
-					enabled = true,
-					underlines = {
-						errors = { "underline" },
-						hints = { "underline" },
-						warnings = { "underline" },
-						information = { "underline" },
+		{
+			"navarasu/onedark.nvim",
+			lazy = false,
+			priority = 1000,
+
+			config = function()
+				require("onedark").setup({
+					-- dark | darker | cool | deep | warm | warmer
+					style = "darker",
+
+					-- Use your terminal background
+					transparent = true,
+
+					-- Match terminal ANSI colors to OneDark
+					term_colors = true,
+
+					-- Hide ~ at the end of the buffer
+					ending_tildes = false,
+
+					-- Syntax styling
+					code_style = {
+						comments = "italic",
+						keywords = "bold",
+						functions = "bold",
+						strings = "none",
+						variables = "none",
 					},
-				},
-				telescope = true,
-				nvimtree = true,
-				cmp = true,
-				gitsigns = true,
-				which_key = true,
-				indent_blankline = {
-					enabled = true,
-					colored_indent_levels = false,
-				},
+
+					-- Cleaner diagnostics
+					diagnostics = {
+						darker = true,
+						undercurl = true,
+						background = false,
+					},
+
+					-- Keep lualine transparent
+					lualine = {
+						transparent = true,
+					},
+				})
+
+				require("onedark").load()
+			end,
+		},
+
+		{
+			"LazyVim/LazyVim",
+			opts = {
+				colorscheme = "onedark",
 			},
 		},
-		config = function(_, opts)
-			require("catppuccin").setup(opts)
-			vim.cmd.colorscheme("catppuccin")
-		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",
