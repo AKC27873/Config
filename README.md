@@ -1,7 +1,6 @@
 # Config / Workflow
 ---------------------------------------------------------------------------------------
-> This is my workflow for my setup for daily using 
-XFCE4 on nixOS and using nvim. 
+> This is my workflow for my setup for daily using KDE Plasma on NixOS and using nvim.
 ---------------------------------------------------------------------------------------
 ## Following the Unstable branch in nix 
 * You will first need to define it in your `configuration.nix` file to follow it and you can do this by running this
@@ -19,3 +18,13 @@ sudo nix-channel --update
 sudo nix-channel --add https://channels.nixos.org/nixos-<version> nixos
 ```
 --------------------------------------------------------------
+
+## Setup Script for system
+
+> [!NOTE]
+> Work in Progress when I get more time
+
+```bash
+chmod +x setup.sh
+./setup.sh
+```
